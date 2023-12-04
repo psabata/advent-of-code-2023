@@ -31,10 +31,8 @@ fun main() {
         val scratchCards = parse(input)
 
         scratchCards.forEachIndexed { index, scratchCard ->
-            for (i in 1..scratchCard.copies) {
-                for (j in 1..scratchCard.winning) {
-                    scratchCards[index + j].copies++
-                }
+            for (i in 1..scratchCard.winning) {
+                scratchCards[index + i].copies += scratchCard.copies
             }
         }
 
